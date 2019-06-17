@@ -8,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   productName = 'Book';
   isDisabled = true;
+  products = ['A Book', 'A Tree'];
+
   constructor() { 
     setTimeout(() => {
     //   this.productName = 'Tree';
     this.isDisabled = false;
     }, 3000);
+  }
 
+  onAddProduct() {
+    this.products.push(this.productName);
   }
 
   ngOnInit() {
