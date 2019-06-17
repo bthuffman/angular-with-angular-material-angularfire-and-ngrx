@@ -21,6 +21,9 @@ export class ProductsComponent implements OnInit {
     this.products.push(this.productName);
   }
 
+  onRemoveProduct(productName: string) {
+    this.products = this.products.filter(p => p !== productName);
+  }
   ngOnInit() {
   }
 
