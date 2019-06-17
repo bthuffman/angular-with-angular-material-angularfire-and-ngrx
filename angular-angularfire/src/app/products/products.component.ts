@@ -17,8 +17,12 @@ export class ProductsComponent implements OnInit {
     }, 3000);
   }
 
-  onAddProduct() {
-    this.products.push(this.productName);
+  onAddProduct(form) {
+    // this.products.push(this.productName);
+    // console.log(form);
+    if (form.valid) {
+      this.products.push(form.valid.productName);
+    }
   }
 
   onRemoveProduct(productName: string) {
