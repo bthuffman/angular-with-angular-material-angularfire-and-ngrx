@@ -24,6 +24,7 @@
           minlength="6"
           #pwInput="ngModel">
           <mat-hint align="end"> {{ pwInput.value?.length }} / 6</mat-hint>
+          <mat-error>Has to be at least 6 characters long.</mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary">Submit</button>
   </form>
