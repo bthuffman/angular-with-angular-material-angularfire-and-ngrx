@@ -1,11 +1,14 @@
 // Importing all Angular Material components want to use into this file. 
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule, MatIcon } from '@angular/material/icon'
+import { MatButtonModule, 
+    MatIconModule, 
+    MatFormFieldModule, 
+    MatInputModule 
+} from '@angular/material';
 
 @NgModule({
-    imports: [MatButtonModule, MatIconModule],
-    exports: [MatButtonModule, MatIconModule]
+    imports: [MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule], 
+    exports: [MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule]
 })
 
 export class MaterialModule {} 
