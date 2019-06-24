@@ -1,6 +1,6 @@
 <section>
   <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <mat-form-field hintLabel="Must enter a valid email address.">
+    <mat-form-field>
       <input 
         type="email" 
         matInput 
@@ -8,7 +8,10 @@
         ngModel 
         name="email"
         email
-        required>
+        required
+        #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>
     </mat-form-field>
     <mat-form-field hintLabel="Should be at least 6 characters long.">
         <input 
