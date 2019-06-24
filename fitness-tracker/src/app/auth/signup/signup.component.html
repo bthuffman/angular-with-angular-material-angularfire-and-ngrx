@@ -10,7 +10,7 @@
         email
         required>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field hintLabel="Should be at least 6 characters long.">
         <input 
           type="password" 
           matInput 
@@ -18,8 +18,9 @@
           ngModel 
           name="password"
           required
-          minlength="6">
-          <mat-hint>Should be at least 6 characters long.</mat-hint>
+          minlength="6"
+          #pwInput="ngModel">
+          <mat-hint align="end"> {{ pwInput.value?.length }} / 6</mat-hint>
     </mat-form-field>
     <button mat-raised-button color="primary">Submit</button>
   </form>
