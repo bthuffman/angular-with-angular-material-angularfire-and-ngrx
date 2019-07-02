@@ -1,5 +1,12 @@
 <!-- Notice that Angular Material has a slightly different version for setting data tables up under their component's documentation -->
-<table mat-table [dataSource]="dataSource" matSort>
+<div fxLayoutAlign="center center">
+<mat-form-field fxFlex="40%">
+  <!-- The keyup is an event listener, using the doFilter that forwards what the user entered with $event (dom event) and pass on the value with target.value -->
+  <input matInput type="text" (keyup)="doFilter($event.target.value)">
+</mat-form-field>
+</div>
+<div fxLayoutAlign="center center">
+<table mat-table [dataSource]="dataSource" matSort fxFlex> 
 
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> 
@@ -52,4 +59,5 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+</div>
 
