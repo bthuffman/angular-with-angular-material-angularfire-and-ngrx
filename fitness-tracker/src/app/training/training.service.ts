@@ -14,7 +14,7 @@ export class TrainingService {
         { id: 'burpees', name: 'Burpees', duration: 60, calories: 8 }
     ];
 private runningExercise: Exercise;
-
+private exercises: Exercise[] = [];
     getAvailableExercises() {
         return this.availableExercises.slice();
     }
@@ -24,6 +24,29 @@ private runningExercise: Exercise;
         //1 emits the exercise and returns a new object where distribute all the running properties of the runningExercise. With these you can now subscribe to exerciseChanged
         this.exerciseChanged.next({ ...this.runningExercise });
     }
+
+    completeExercise() {
+        //push this into exercise array
+        this.exercises.push({ 
+            ...this.runningExercise, 
+            date: new Date(), 
+            state: 'completed' });
+        this.runningExercise = null;
+        this.exerciseChanged.next(null);
+    }
+
+    cancelExercise(progress: number) {
+        //push this into exercise array
+        this.exercises.push({ 
+            ...this.runningExercise, 
+            duration: this.runningExercise.duration * (progress / 100),
+            calories: this.runningExercise.duration * (progress / 100),
+            date: new Date(), 
+            state: 'cancelled' });
+        this.runningExercise = null;
+        this.exerciseChanged.next(null);
+    }
+
     getRunningExercise() {
         return { ...this.runningExercise };
     }
