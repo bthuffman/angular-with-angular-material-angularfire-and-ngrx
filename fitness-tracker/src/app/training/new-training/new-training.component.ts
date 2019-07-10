@@ -27,7 +27,7 @@ export class NewTrainingComponent implements OnInit {
     //store this in the exercises property
     this.exercises = this.db
     //call the collection method which allows you to call from a particular collection in the angularfirestore
-    .collection('availableExercises')
+    .collection<any>('availableExercises')
     //different event listener that gives us an observable, allows getting the id of the data too.
     .snapshotChanges()
     //gives us an observable
@@ -37,18 +37,19 @@ export class NewTrainingComponent implements OnInit {
         return {
           //getting id from firestore
           id: doc.payload.doc.id,
-          // name: doc.payload.doc.data().name,
-          // duration: doc.payload.doc.data().duration,
-          // calories: doc.payload.doc.data().calories
+          // These would be if wasn't working.
+          name: doc.payload.doc.data().name,
+          duration: doc.payload.doc.data().duration,
+          calories: doc.payload.doc.data().calories
           //returns an object and pulling the properties out of the returned object to the object that your returning.
-          ...doc.payload.doc.data()
+          // ...doc.payload.doc.data()
         };
       });
     })
-    //get some result, console log what that is (should be the objects created in the angularfirestore's collection)
-    .subscribe(result => {
-        console.log(result);
-    })
+    //Has stuff subscribe to the exercises. If get rid of the observable, this will still attempt to subscribe to it and will eat up computer use as it attempts to grab at nothing. 
+    this.exercises.subscribe((stuff) => {
+      console.log(stuff);
+    });
   }
 
 
