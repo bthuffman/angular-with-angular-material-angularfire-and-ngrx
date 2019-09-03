@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  //Adding firebase config/initialize firebase 
+  // Adding firebase config/initialize firebase
   firebase: {
-    apiKey: "AIzaSyAC1Ef05ZuJfK-CBotFN1AUgS-QfRhSPvQ",
-    authDomain: "all-things-angular-f119f1.firebaseapp.com",
-    databaseURL: "https://all-things-angular-f119f1.firebaseio.com",
-    projectId: "all-things-angular-f119f1",
-    storageBucket: "all-things-angular-f119f1.appspot.com",
-    messagingSenderId: "345868579059",
-    appId: "1:345868579059:web:0c844d37b3d07e82"
+    apiKey: 'AIzaSyAC1Ef05ZuJfK-CBotFN1AUgS-QfRhSPvQ',
+    authDomain: 'all-things-angular-f119f1.firebaseapp.com',
+    databaseURL: 'https://all-things-angular-f119f1.firebaseio.com',
+    projectId: 'all-things-angular-f119f1',
+    storageBucket: 'all-things-angular-f119f1.appspot.com',
+    messagingSenderId: '345868579059',
+    appId: '1:345868579059:web:0c844d37b3d07e82'
   }
 };
 

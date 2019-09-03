@@ -13,13 +13,13 @@ export class CurrentTrainingComponent implements OnInit {
   progress = 0;
   timer: number;
 
-  //Injecting
+  // Injecting
   constructor(private dialog: MatDialog, private trainingService: TrainingService) { }
 
   ngOnInit() {
     this.startOrResumeTimer();
   }
-    //using the duration of the exercise to calculate how long until the progress bar hits 100%
+    // using the duration of the exercise to calculate how long until the progress bar hits 100%
   startOrResumeTimer() {
     const step = this.trainingService.getRunningExercise().duration / 100 * 1000;
     this.timer = setInterval(() => {
@@ -44,7 +44,7 @@ export class CurrentTrainingComponent implements OnInit {
       } else {
         this.startOrResumeTimer();
       }
-    })
+    });
   }
 }
 
