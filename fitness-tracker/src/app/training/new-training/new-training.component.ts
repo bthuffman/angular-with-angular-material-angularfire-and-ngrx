@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Rx';
-// import { map } from 'rxjs/operators'; //NOTE this didn't work, whereas adding the three import rxjs/add/operator/***** worked to allow it to compile.
+// import { map } from 'rxjs/operators'; //NOTE this didn't work, whereas adding the three import
+// rxjs/add/operator/***** worked to allow it to compile.
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/subscribeOn';
